@@ -1,0 +1,57 @@
+#mainVideo{
+    margin-top:13vh;
+    display: flex;
+    width:100vw;
+    height:100vh;
+    /* border: 1px solid black; */
+}
+#leftVideo{
+    /* border: 1px solid black; */
+    width:69vw;
+   
+}
+#rightVideo{
+    /* border: 1px solid black; */
+    width:25vw;
+    margin-left:1vw;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1%;
+}
+#iframe{
+    width:90%;
+    height:70%;
+    margin-right: -5%;
+}
+#gridData{
+    display:flex;
+    height:18vh;
+    width:100%;
+}
+#gridLeft{
+    border: 1px solid black;
+    width:55%;
+}
+#thumImg{
+    width:100%;
+    height:100%;  
+}
+#videoDetails{
+    width:40%;
+    text-align: left;
+    margin-left: 10px;
+}
+#videoTitle{
+    text-align: left;
+    display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin-top: 10px;
+   font-size: 15px;
+   font-weight:500;
+}
+#videoChannel{
+    font-size: 0.7em;
+}
