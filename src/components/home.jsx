@@ -14,6 +14,7 @@ export const Home = () =>{
                     <span id={styles.leftIcons} class="material-icons"> home </span>
                     <span id = {styles.leftNaming}>Home</span>
                 </div>
+                
                 <div id = {styles.leftIconsDiv}>
                     <span id={styles.leftIcons} class="material-symbols-outlined">explore</span>
                     <span>Explore</span>
