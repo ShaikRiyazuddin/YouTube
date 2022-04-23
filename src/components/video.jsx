@@ -6,13 +6,10 @@ import {Link} from "react-router-dom";
 import {videoContext} from "../context/videoData";
 
 export const Video = () =>{
-    let api = "AIzaSyBRVuhKhZJhJ-2XBiKTvUvqKerJf01rYoI";
     let {id} = useParams();
   
     const {video} = useContext(videoContext);
-    
 
-    console.log(id)
     return(
         <div id = {styles.mainVideo} >
         <div id = {styles.leftVideo}>
@@ -22,7 +19,7 @@ export const Video = () =>{
         {video.map((item, index) => {
                     return(
                         <Link style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id.videoId}`}>
-                        <div id = {styles.gridData} key = {index}>
+                        <div id = {styles.gridData} key = {item.id.videoId}>
                             <div id = {styles.gridLeft}>
                                 <img id = {styles.thumImg} src = {item.snippet.thumbnails.high.url}></img>
                             </div>

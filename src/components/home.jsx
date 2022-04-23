@@ -4,8 +4,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import {videoContext} from "../context/videoData";
 
-
-
 export const Home = () =>{
 
     const {video} = useContext(videoContext);
@@ -56,7 +54,7 @@ export const Home = () =>{
                 {video.map((item, index) => {
                
                     return(
-                        <Link key = {item.id} style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id.videoId}`}>
+                        <Link key = {item.id.videoId} style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id.videoId}`}>
                     <div id = {styles.gridData} key = {item.id} onClick = {()=>{
                         
                     }}>
