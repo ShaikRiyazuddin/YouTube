@@ -1,22 +1,17 @@
 import { useParams  } from "react-router-dom";
 import styles from "./styles/video.module.css";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import {videoContext} from "../context/videoData";
 
 export const Video = () =>{
-    const [video, setVideo] = useState([]);
     let api = "AIzaSyBRVuhKhZJhJ-2XBiKTvUvqKerJf01rYoI";
     let {id} = useParams();
-    useEffect(() => {
-        fetch();
-    },[]);
-   
-    const fetch = () =>{
-        axios.get(`https://youtube.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=IN&key=${api}&type=video&part=snippet&maxResults=15`).then(res => {
-            setVideo(res.data.items);
-        });
-    }
+  
+    const {video} = useContext(videoContext);
+    
+
     console.log(id)
     return(
         <div id = {styles.mainVideo} >
@@ -26,7 +21,7 @@ export const Video = () =>{
         <div id = {styles.rightVideo}>
         {video.map((item, index) => {
                     return(
-                        <Link style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id}`}>
+                        <Link style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id.videoId}`}>
                         <div id = {styles.gridData} key = {index}>
                             <div id = {styles.gridLeft}>
                                 <img id = {styles.thumImg} src = {item.snippet.thumbnails.high.url}></img>

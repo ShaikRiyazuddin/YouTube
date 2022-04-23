@@ -1,24 +1,14 @@
 import styles from "./styles/home.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {videoContext} from "../context/videoData";
 
 
 
 export const Home = () =>{
-    let api = "AIzaSyBRVuhKhZJhJ-2XBiKTvUvqKerJf01rYoI";
-    let [video, setVideo] = useState([]);
 
-    useEffect(() => {
-        fetch();
-    },[]);
-   
-    const fetch = () =>{
-        axios.get(`https://youtube.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=IN&key=${api}&type=video&part=snippet&maxResults=32`).then(res => {
-            setVideo(res.data.items);
-        });
-    }
-    console.log(video)
+    const {video} = useContext(videoContext);
     return(
         <div className = {styles.mainCont}>
             <div className = {styles.leftCont}>
@@ -64,9 +54,10 @@ export const Home = () =>{
             {/* ////////////////Right cont ////////////////////////////// */}
             <div id = {styles.rightCont}>
                 {video.map((item, index) => {
+               
                     return(
-                        <Link style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id}`}>
-                    <div id = {styles.gridData} key = {index} onClick = {()=>{
+                        <Link key = {item.id} style = {{textDecoration:"none", color:"black"}} to={`/video/${item.id.videoId}`}>
+                    <div id = {styles.gridData} key = {item.id} onClick = {()=>{
                         
                     }}>
                         <img id = {styles.thumImg} src = {item.snippet.thumbnails.high.url}></img>
