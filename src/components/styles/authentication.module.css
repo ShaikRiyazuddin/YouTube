@@ -1,0 +1,87 @@
+#Container{
+    width:100vw;
+    height:100vh;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#midContainer{
+    border:0.5px solid rgb(212, 212, 212);
+    width:30vw;
+    height:75vh;
+    border-radius:6px;
+
+}
+
+#logo{
+    width: 5vw;
+    margin-top:7vh;
+}
+#signIn{
+    color: #202124;
+    padding-bottom: 0;
+    padding-top: 16px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-top: 0;
+    word-break: break-word; 
+}
+#toContinue{
+    color: #202124;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 0.8;
+    padding-bottom: 0;
+    padding-top: 8px;
+}
+#input{
+    direction: ltr;
+    text-align: left;
+    border-radius: 4px;
+    color: #202124;
+    border:0.5px solid rgb(212, 212, 212);
+    font-size: 16px;
+    height: 3vh;
+    width: 23vw;
+    margin: 1px 1px 0 1px;
+    padding: 13px 15px;
+    margin-top: 2vh;
+}
+#forgot{
+    color: #1a73e8;
+    font-weight: 500;
+    letter-spacing: .25px;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 2vh 0 0 2.5vw;
+    border: 0;
+    display:flex;
+    align-items: left;
+}
+#notYours{
+    color: #5f6368;
+    font-size: 14px;
+    /* line-height: 1.4286; */
+    margin-top: 6vh;
+}
+#learnMore{
+    color: #1a73e8;
+    font-weight: 500;
+    letter-spacing: .25px;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0vh 0 0 2.8vw;
+    border: 0;
+    display:flex;
+    align-items: left;
+}

@@ -44,7 +44,7 @@ export const Nav = () => {
         <span class="material-icons" id = {styles.userIconsSize}>video_call</span>
         <span class="material-icons" id = {styles.userIconsSize}> apps </span>
         <span class="material-icons" id = {styles.userIconsSize}> notifications_none </span>
-        <span class="material-icons" id = {styles.userIconsSizeAccount}>account_circle</span>
+        <span class="material-icons" id = {styles.userIconsSizeAccount}><Link to = "/auth">account_circle</Link></span>
       </div>
     </div>
   );

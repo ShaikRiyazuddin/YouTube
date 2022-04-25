@@ -4,6 +4,7 @@ import {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {videoContext} from "../context/videoData";
+import {Nav} from "./nav";
 
 export const Video = () =>{
     let {id} = useParams();
@@ -12,8 +13,9 @@ export const Video = () =>{
 
     return(
         <div id = {styles.mainVideo} >
+            <Nav />
         <div id = {styles.leftVideo}>
-            <iframe  id = {styles.iframe} src={`https://www.youtube.com/embed/${id}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+            <iframe  id = {styles.iframe} src={`https://www.youtube.com/embed/${id}`} frameborder="0" allow="accelerometer;autoplay;play; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
         </div>
         <div id = {styles.rightVideo}>
         {video.map((item, index) => {

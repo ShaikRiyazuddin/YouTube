@@ -3,12 +3,15 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import {videoContext} from "../context/videoData";
+import {Nav} from "./nav"
 
 export const Home = () =>{
 
     const {video} = useContext(videoContext);
     return(
+        
         <div className = {styles.mainCont}>
+           <Nav />
             <div className = {styles.leftCont}>
                 <div id = {styles.leftIconsDiv}>
                     <span id={styles.leftIcons} class="material-icons"> home </span>
