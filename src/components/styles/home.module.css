@@ -6,7 +6,7 @@
     display:flex;
 }
 .leftCont{
-    border:1px solid black;
+    border:1px solid rgb(210, 210, 210);
     border-top: 0;
     width:13vw;
     height:100%;
@@ -30,7 +30,7 @@
     margin-top:2vh;
 }
 hr{
-    border: 1.5px solid black;
+    border: 1px solid rgb(210, 210, 210);
     width: 100%;
     margin-top: 2vh;
     border-top: 0;
@@ -73,4 +73,11 @@ hr{
 #videoChannel{
     font-size: 13px;    
     margin-top:-10px;
+}
+
+@media screen and (max-width:1250px){
+    .leftCont{
+        display: none;
+    }
+
 }

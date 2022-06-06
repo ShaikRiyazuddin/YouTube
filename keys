@@ -1,0 +1,7 @@
+// REACT_APP_Youtube_API_KEY = "AIzaSyBRVuhKhZJhJ-2XBiKTvUvqKerJf01rYoI"; //my api key of google
+
+// AIzaSyCEeGETVto_BwLV4VdVWERqrFCVbqHVyZY            new api key of google use for youtube carefully dont overload
+
+// REACT_APP_Youtube_API_KEY = "AIzaSyBnlOVq5CXK6fS8srhtMxRRJQcu-FRvTvM" //selva api key of google
+
+REACT_APP_Youtube_API_KEY = "AIzaSyCEeGETVto_BwLV4VdVWERqrFCVbqHVyZY"

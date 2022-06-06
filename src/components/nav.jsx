@@ -1,20 +1,31 @@
 import styles from "./styles/navbar.module.css";
-import {useContext, useState} from "react";
+import { useContext, useState, useEffect } from "react";
 import { videoContext } from "../context/videoData";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
-  const {handleChange} = useContext(videoContext);
+  const { handleChange } = useContext(videoContext);
   const [value, setValue] = useState("");
+  const [keyValue, setKeyValue] = useState("");
 
-  const handleInput = (e) =>{
+  const handleInput = (e) => {
     setValue(e.target.value);
-  }
+  };
 
-  const handleSearch = (e) =>{
+  console.log(value, "value");
+
+  useEffect(() => {
+    if (!value) {
+      return;
+    }
+    if (keyValue === 13) {
+      handleChange(value);
+    }
+  }, [keyValue]);
+
+  const handleSearch = (e) => {
     handleChange(value);
-  }
+  };
 
   return (
     <div className={styles.nav}>
@@ -22,14 +33,19 @@ export const Nav = () => {
         {" "}
         reorder{" "}
       </span>
-      <Link to = "/">
-      <img
-        id={styles.logo}
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
-        alt=""
-      />
+      <Link to="/">
+        <img
+          id={styles.logo}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+          alt=""
+        />
       </Link>
-      <input placeholder="Search" id={styles.inputBar}  onChange= {handleInput}></input>
+      <input
+        placeholder="Search"
+        id={styles.inputBar}
+        onChange={handleInput}
+        onKeyUp={(x) => setKeyValue(x.keyCode)}
+      ></input>
       <div id={styles.searchDiv} onClick={handleSearch}>
         <span class="material-icons" id={styles.searchIcon}>
           search
@@ -40,12 +56,31 @@ export const Nav = () => {
           mic
         </span>
       </div>
-      <div className = {styles.userIcons}>
-        <span class="material-icons" id = {styles.userIconsSize}>video_call</span>
-        <span class="material-icons" id = {styles.userIconsSize}> apps </span>
-        <span class="material-icons" id = {styles.userIconsSize}> notifications_none </span>
-        <span class="material-icons" id = {styles.userIconsSizeAccount}><Link to = "/auth">account_circle</Link></span>
+      <div className={styles.userIcons}>
+        <span class="material-icons" id={styles.userIconsSize}>
+          video_call
+        </span>
+        <span class="material-icons" id={styles.userIconsSize}>
+          {" "}
+          apps{" "}
+        </span>
+        <span class="material-icons" id={styles.userIconsSize}>
+          {" "}
+          notifications_none{" "}
+        </span>
       </div>
+      <Link
+        to="/auth"
+        style={{ textDecoration: "none", color: "#1c8ff3", marginTop: "5px" }}
+      >
+        {" "}
+        <div className={styles.loginDiv}>
+          <span>Sing in</span>
+          <span class="material-icons" id={styles.userIconsSizeAccount}>
+            account_circle
+          </span>
+        </div>
+      </Link>
     </div>
   );
 };

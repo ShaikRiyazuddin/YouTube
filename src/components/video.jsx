@@ -1,7 +1,6 @@
 import { useParams  } from "react-router-dom";
 import styles from "./styles/video.module.css";
-import {useState, useEffect, useContext} from "react";
-import axios from "axios";
+import {useContext} from "react";
 import {Link} from "react-router-dom";
 import {videoContext} from "../context/videoData";
 import {Nav} from "./nav";
