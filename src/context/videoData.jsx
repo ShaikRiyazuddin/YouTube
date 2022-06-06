@@ -7,11 +7,16 @@ export const VideoData = ({ children }) => {
   const key = process.env.REACT_APP_Youtube_API_KEY;
   // const key = "AIzaSyBnlOVq5CXK6fS8srhtMxRRJQcu-FRvTvM"s
   let [video, setVideo] = useState([]);
+  const [user, setUsers] = useState({})
   console.log(key, "key");
 
   useEffect(() => {
     fetch();
   }, []);
+
+  const handleUsers = (v) => {
+    setUsers({...user,v})
+  }
 
   const fetch = () => {
     axios
@@ -40,7 +45,7 @@ export const VideoData = ({ children }) => {
   };
 
   return (
-    <videoContext.Provider value={{ video, handleChange }}>
+    <videoContext.Provider value={{ video, handleChange, user, handleUsers }}>
       {children}
     </videoContext.Provider>
   );
